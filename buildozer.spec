@@ -11,5 +11,7 @@ version = 0.1
 requirements = python3,kivy,requests
 orientation = portrait
 
-# Bắt buộc phải có dòng này để GitHub tự động đồng ý điều khoản Android SDK
+# Cấu hình Android bắt buộc
 android.accept_sdk_license = True
+android.api = 31
+android.minapi = 21
