@@ -15,10 +15,34 @@ jobs:
 
       - name: Install dependencies
         run: |
+          sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get install -y libffi-dev libssl-dev zlib1g-dev autoconf libtool pkg-config
+          sudo apt-get install -y \
+              build-extras \
+              build-essential \
+              git \
+              ffmpeg \
+              libsdl2-dev \
+              libsdl2-image-dev \
+              libsdl2-mixer-dev \
+              libsdl2-ttf-dev \
+              pkg-config \
+              libgl1-mesa-dev \
+              libgles2-mesa-dev \
+              python3-setuptools \
+              libffi-dev \
+              libssl-dev \
+              zlib1g-dev \
+              openjdk-17-jdk \
+              autoconf \
+              libtool \
+              unzip \
+              zip
+
+      - name: Install Buildozer and Cython
+        run: |
           pip install --upgrade pip
-          pip install buildozer cython
+          pip install cython==0.29.36 buildozer
 
       - name: Build with Buildozer
         run: |
